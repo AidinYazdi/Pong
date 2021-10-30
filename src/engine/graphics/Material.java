@@ -9,6 +9,8 @@
 package engine.graphics;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
@@ -42,6 +44,10 @@ public class Material {
 
     // set up all the information about the texture
     public void create() {
+	// make it so that this function doesn't output the slick warning
+	PrintStream out = System.out;
+	System.setOut(new PrintStream(OutputStream.nullOutputStream()));
+
 	/*
 	 * the first argument is the type of file that will be used to load the
 	 * texture (.png, .jpeg, etc.)
@@ -59,6 +65,9 @@ public class Material {
 	} catch (IOException e) {
 	    System.err.println("Can't find the texture at " + path);
 	}
+
+	// revert System.out function to normal
+	System.setOut(out);
     }
 
     // destroy the texture (I think this frees up system resources)

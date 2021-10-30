@@ -83,7 +83,7 @@ public class ToRender {
 		Square.generateSquare(new Vector3f(-0.5f, 0.5f, 1.0f), new Vector3f(0.0f, 0.0f, 45.0f), 1.0f,
 			new Vector3f(1.0f, 0.0f, -1.0f), new Vector3f(1.0f, 0.0f, 0.0f), new Vector3f(0.0f, 0.0f, 1.0f),
 			new Vector3f(1.0f, 0.0f, 0.0f), null),
-		Triangle.generateTriangle(new Vector3f(-0.5f, 0.5f, 3.0f), 0, 0, 0, 5, new Vector3f(1.0f, 0.0f, 1.0f),
+		Triangle.generateTriangle(new Vector3f(-0.5f, 0.5f, 3.0f), 0, 0, 0, 2, new Vector3f(1.0f, 0.0f, 1.0f),
 			new Vector3f(0.0f, 1.0f, 1.0f), new Vector3f(0.0f, 0.0f, 1.0f), null),
 		Rectangle.generateRectangle(new Vector3f(3.0f, 0.0f, -1.0f), Rectangle.getStandardRectangleLength(),
 			Rectangle.getStandardRectangleWidth(), new Vector3f(0.0f, 0.0f, 1.0f),
@@ -104,16 +104,30 @@ public class ToRender {
 	Mesh[] tempMeshArray2 = Circle.generateCircle(circleCenters[0], Circle.getStandardCircleRadius(), circleIndices,
 		circleColors[0]);
 
+	// make more shapes
+	Mesh[] tempMeshArray3 =
+	    {
+		Square.generateSquare(new Vector3f(-5.0f, -2.2f, 5f), new Vector3f(90.0f, 0.0f, 0.0f), 15.0f,
+			new Vector3f(0.0f, 1.0f, 0.0f), new Vector3f(0.0f, 1.0f, 0.0f), new Vector3f(0.0f, 1.0f, 0.0f),
+			new Vector3f(0.0f, 1.0f, 0.0f), "/textures/Fractal.png"),
+		Square.generateSquare(new Vector3f(-5.0f, 11f, -2.5f), new Vector3f(30.0f, 0.0f, 0.0f), 15.0f,
+			new Vector3f(0.0f, 1.0f, 0.0f), new Vector3f(0.0f, 1.0f, 0.0f), new Vector3f(0.0f, 1.0f, 0.0f),
+			new Vector3f(0.0f, 1.0f, 0.0f), "/textures/Walk.png")
+	    };
+
 	/*
 	 * initialize the actual meshes[] array and put all the meshes from the
 	 * temp mesh arrays into it
 	 */
-	this.meshes = new Mesh[tempMeshArray1.length + tempMeshArray2.length];
+	this.meshes = new Mesh[tempMeshArray1.length + tempMeshArray2.length + tempMeshArray3.length];
 	for (int i = 0; i < tempMeshArray1.length; i++) {
 	    meshes[i] = tempMeshArray1[i];
 	}
 	for (int i = 0; i < tempMeshArray2.length; i++) {
 	    meshes[i + tempMeshArray1.length] = tempMeshArray2[i];
+	}
+	for (int i = 0; i < tempMeshArray3.length; i++) {
+	    meshes[i + tempMeshArray1.length + tempMeshArray2.length] = tempMeshArray3[i];
 	}
 
 	/*
