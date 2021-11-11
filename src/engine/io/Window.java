@@ -93,7 +93,7 @@ public class Window {
 	 * the forth argument is how far something can be before it's not shown
 	 * to the viewer
 	 */
-	projection = Matrix4f.projection(70.0f, ((float) width) / ((float) height), 0.1f, 1000.0f);
+	projection = Matrix4f.projection(0.001f, ((float) width) / ((float) height), 0.1f, 1000.0f);
     }
 
     // this is the method that actually creates the window

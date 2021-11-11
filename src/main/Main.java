@@ -87,7 +87,7 @@ public class Main implements Runnable {
 	 * initializes the actual window with the WIDTH and HEIGHT defined above
 	 * and the title "GAME ENGINE"
 	 */
-	window = new Window(WIDTH, HEIGHT, "Game Engine");
+	window = new Window(WIDTH, HEIGHT, "Pong");
 
 	/*
 	 * this method initializes the shader. The source code can be found in
@@ -105,7 +105,7 @@ public class Main implements Runnable {
 	renderer = new Renderer(window, shader);
 
 	// sets the background color of the window
-	window.setBackgroundColor(1.0f, 1.0f, 1.0f);
+	window.setBackgroundColor(0.0f, 0.0f, 0.0f);
 
 	/*
 	 * this method creates the window. The source code can be found in the
@@ -180,7 +180,7 @@ public class Main implements Runnable {
 	close();
 
 	// tells the user that the game engine has been stopped
-	System.out.println("game engine stopped");
+	System.out.println("pong has been stopped");
     }
 
     // update all the game variables
@@ -189,7 +189,7 @@ public class Main implements Runnable {
 	window.update();
 
 	// update the camera
-	camera.update();
+	// camera.update();
 
 	// update all the meshes
 	for (int i = 0; i < toRender.getMeshes().length; i++) {

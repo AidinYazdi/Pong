@@ -76,6 +76,11 @@ public class Vector3f {
 		+ (vector1.getZ() * vector2.getZ());
     }
 
+    // prints the vector (useful for debbuging)
+    public void print() {
+	System.out.println("(" + x + ", " + y + ", " + z + ")");
+    }
+
     // this method will help us compare values (even across classes)
     @Override
     public int hashCode() {

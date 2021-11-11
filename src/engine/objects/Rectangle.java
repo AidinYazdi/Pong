@@ -17,11 +17,11 @@ import engine.maths.Vector3f;
 public class Rectangle {
     // standard measurements for rectangles
     public static float getStandardRectangleLength() {
-	return 2.0f;
+	return 0.000002f;
     }
 
     public static float getStandardRectangleWidth() {
-	return 1.0f;
+	return 0.0000005f;
     }
 
     /*

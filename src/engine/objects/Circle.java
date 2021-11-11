@@ -19,7 +19,7 @@ import engine.maths.Vector3f;
 public class Circle {
     // standard measurements for circles
     public static float getStandardCircleRadius() {
-	return 1.0f;
+	return 0.00000035f;
     }
 
     // return a circle mesh
